@@ -57,7 +57,7 @@ export class MovieStore {
         return this.movies.find((movie) => movie.id === id);
     }
     static updateMovie(id, newMovieData) {
-        if(!this.movies.find((movie) => movie.id === id)) {
+        if(!this.getMovieById(id)) {
             return false;
         }
 
@@ -75,7 +75,7 @@ export class MovieStore {
         return true;
     }
     static deleteMovie(id) {
-        if(!this.movies.find((movie) => movie.id === id)) {
+        if(!this.getMovieById(id)) {
             return false;
         }
 
